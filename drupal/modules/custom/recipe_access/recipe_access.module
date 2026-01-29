@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Alter Recipe Advanced Search exposed form.
+ */
+function recipe_access_form_views_exposed_form_recipe_advanced_search_page_1_alter(
+  array &$form,
+  FormStateInterface $form_state
+) {
+  // Add Bootstrap row to form.
+  $form['#attributes']['class'][] = 'row';
+
+  // Loop through exposed elements.
+  foreach ($form as $key => &$element) {
+    if (!is_array($element) || empty($element['#type'])) {
+      continue;
+    }
+
+    if ($element['#type'] === 'hidden') {
+      continue;
+    }
+
+    // These classes WILL appear on `.js-form-item`
+    $element['#attributes']['class'][] = 'col-12';
+    $element['#attributes']['class'][] = 'col-md-2';
+    $element['#attributes']['class'][] = 'col-lg-3';
+  }
+}

@@ -1,0 +1,27 @@
+uuid: 4ab973c8-fa0f-41a8-a74c-c17be5156b2c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - umami_sub
+_core:
+  default_config_hash: iAhownPneFU_HfOgPVITz339xTxjd_yAzbcBOUBd4Sk
+id: umami_sub_page_title
+theme: umami_sub
+region: header
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

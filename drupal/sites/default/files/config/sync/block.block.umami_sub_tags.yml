@@ -1,0 +1,29 @@
+uuid: 2d8f09dc-6786-4acf-b554-d25bb964cb78
+langcode: en
+status: false
+dependencies:
+  config:
+    - facets.facet.tags
+  module:
+    - facets
+    - system
+  theme:
+    - umami_sub
+id: umami_sub_tags
+theme: umami_sub
+region: header
+weight: 3
+provider: null
+plugin: 'facet_block:tags'
+settings:
+  id: 'facet_block:tags'
+  label: Tags
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: umami_sub_tags
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /faceted-search

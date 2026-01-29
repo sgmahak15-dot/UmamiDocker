@@ -1,0 +1,28 @@
+uuid: 449b279b-ffd0-4997-a8cc-d3ed217c3006
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.faceted_summary
+  module:
+    - facets_summary
+    - system
+  theme:
+    - umami_sub
+id: umami_sub_facetedsummary_2
+theme: umami_sub
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facets_summary_block:faceted_summary'
+settings:
+  id: 'facets_summary_block:faceted_summary'
+  label: 'Faceted summary'
+  label_display: visible
+  provider: facets_summary
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /faceted-search

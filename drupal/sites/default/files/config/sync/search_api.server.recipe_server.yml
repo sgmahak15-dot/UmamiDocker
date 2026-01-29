@@ -1,0 +1,15 @@
+uuid: 918b73d6-79cb-4b53-8306-af30bf27308d
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: recipe_server
+name: 'Recipe Server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: prefix
+  phrase: bigram

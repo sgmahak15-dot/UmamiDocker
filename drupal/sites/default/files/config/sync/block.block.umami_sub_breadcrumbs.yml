@@ -1,0 +1,27 @@
+uuid: 7335b955-53fe-452c-afa9-2e28d21ca178
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - umami_sub
+_core:
+  default_config_hash: 5prrlTxk8gDlnDH_jhnc0dNihAw8WT-RVZ3nrec_wiE
+id: umami_sub_breadcrumbs
+theme: umami_sub
+region: header
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

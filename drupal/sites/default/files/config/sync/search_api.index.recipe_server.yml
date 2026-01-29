@@ -1,0 +1,129 @@
+uuid: 0b9bf69f-65c7-4e3b-86bb-a021ec7a254b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients
+    - field.storage.node.field_media_image
+    - field.storage.node.field_number_of_servings
+    - field.storage.node.field_recipe_category
+    - field.storage.node.field_tags
+    - search_api.server.recipe_server
+  module:
+    - node
+    - recipe_access
+    - taxonomy
+id: recipe_server
+name: 'Recipe index'
+description: ''
+read_only: false
+field_settings:
+  custom_value:
+    label: 'Custom value'
+    property_path: custom_value
+    type: string
+    configuration:
+      value: ''
+  field_ingredients:
+    label: Ingredients
+    datasource_id: 'entity:node'
+    property_path: field_ingredients
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_ingredients
+  field_media_image_1:
+    label: 'Media Image'
+    datasource_id: 'entity:node'
+    property_path: field_media_image
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_media_image
+  field_number_of_servings:
+    label: 'Number of servings'
+    datasource_id: 'entity:node'
+    property_path: field_number_of_servings
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_number_of_servings
+  field_recipe_category:
+    label: 'Recipe category'
+    datasource_id: 'entity:node'
+    property_path: field_recipe_category
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_category
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  ingredient_count:
+    label: 'Ingredient Count'
+    datasource_id: 'entity:node'
+    property_path: ingredient_count
+    type: integer
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: string
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  vid:
+    label: Vocabulary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: vid
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - recipe
+    languages:
+      default: false
+      selected:
+        - en
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  ingredient_count: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: recipe_server

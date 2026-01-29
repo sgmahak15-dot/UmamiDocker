@@ -1,0 +1,28 @@
+uuid: 410bfe68-ed3d-4b31-a2f4-cf97c3ac9fe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - contact
+    - filter
+    - media
+    - recipe_access
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: PhpjKGbPRzHm1FDviTaPLu3g-svxhir96cooP-e8wSM
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'search recipes'
+  - 'use text format basic_html'
+  - 'view media'

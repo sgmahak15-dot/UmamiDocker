@@ -1,0 +1,5 @@
+name: Recipe Access
+type: module
+core_version_requirement: ^10
+package: Custom
+description: Restrict the access of facet

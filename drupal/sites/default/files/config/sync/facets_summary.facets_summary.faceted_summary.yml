@@ -1,0 +1,54 @@
+uuid: 269f8520-0522-4a40-b641-882d4e579de4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recipe_category
+    - facets.facet.tags
+    - search_api.index.recipe_server
+    - views.view.faceted_search
+  module:
+    - search_api
+id: faceted_summary
+name: 'Faceted summary'
+facet_source_id: 'search_api:views_page__faceted_search__page_1'
+only_visible_when_facet_source_is_visible: false
+processor_configs:
+  reset_facets:
+    processor_id: reset_facets
+    weights:
+      build: '30'
+    settings:
+      link_text: Reset
+      position: before
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
+  show_summary:
+    processor_id: show_summary
+    weights:
+      build: '20'
+    settings: {  }
+  show_text_when_empty:
+    processor_id: show_text_when_empty
+    weights:
+      build: '10'
+    settings:
+      text:
+        value: 'No results found.'
+        format: plain_text
+facets:
+  recipe_category:
+    checked: true
+    label: 'Recipe category'
+    separator: ', '
+    show_count: true
+    weight: 0
+  tags:
+    checked: true
+    label: Tags
+    separator: ', '
+    show_count: true
+    weight: 0

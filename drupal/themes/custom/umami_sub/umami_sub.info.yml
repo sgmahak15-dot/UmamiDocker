@@ -1,0 +1,13 @@
+name: Umami Subtheme
+type: theme
+base theme: umami
+core_version_requirement: ^10
+libraries:
+  - umami_sub/global
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
