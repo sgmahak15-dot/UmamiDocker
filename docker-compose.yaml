@@ -1,0 +1,27 @@
+
+
+services:
+  drupal:
+    image: drupal:10.2.7
+    container_name: drupalapp
+    ports:
+      - "8080:80"
+    volumes:
+      - ./drupal:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: drupal-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
